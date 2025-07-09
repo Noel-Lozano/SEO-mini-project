@@ -1,0 +1,70 @@
+/* Body background and font settings */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f0f2f5, #e0eafc);
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+/* Centered container spacing */
+.container {
+    max-width: 800px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #343a40;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #1e7e34;
+}
+
+/* Flash messages */
+.alert {
+    font-size: 1rem;
+}
+
+/* Form controls */
+.form-control {
+    border-radius: 0.5rem;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Section spacing */
+.content-section {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+}
+
+/* Table styling */
+table.table {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

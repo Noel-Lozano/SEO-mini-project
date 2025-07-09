@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center mt-5">
+    <h1 class="mb-4">Welcome to the Premier League Fixtures App</h1>
+    <p class="lead mb-5">Choose an option below:</p>
+
+    <div class="d-grid gap-3 col-6 mx-auto">
+        <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg">Register</a>
+        <a href="{{ url_for('team') }}" class="btn btn-success btn-lg">View Your Team's Fixtures</a>
+    </div>
+</div>
+{% endblock %}

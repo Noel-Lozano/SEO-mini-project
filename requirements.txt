@@ -1,0 +1,9 @@
+requests
+pandas
+flask
+sqlalchemy
+flask_sqlalchemy
+wtforms
+flask_wtf
+flask_behind_proxy
+email_validator

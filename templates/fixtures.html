@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Fixtures for {{ team_name }}</h2>
+
+{% if fixtures %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Home</th>
+            <th>Away</th>
+            <th>Status</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for match in fixtures %}
+        <tr>
+            <td>{{ match['utcDate'][:10] }}</td>  <!-- Just show YYYY-MM-DD -->
+            <td>{{ match['Home'] }}</td>
+            <td>{{ match['Away'] }}</td>
+            <td>{{ match['Status'] }}</td>
+            <td>
+                {% if match['Score_H'] is not none and match['Score_A'] is not none %}
+                    {{ match['Score_H'] }} - {{ match['Score_A'] }}
+                {% else %}
+                    TBD
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No fixtures found for {{ team_name }}.</p>
+{% endif %}
+
+<a href="{{ url_for('team') }}" class="btn btn-outline-primary">Back</a>
+{% endblock %}
