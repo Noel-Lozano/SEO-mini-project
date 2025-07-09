@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
-
-from flask import Flask, render_template, url_for, flash, redirect
+import git
+from flask import Flask, render_template, url_for, flash, redirect, request
 from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
 import pandas as pd
@@ -48,7 +48,15 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-
+@app.route("/update_server", methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        repo = git.Repo('/home/noelseominiproject/SEO-mini-project')
+        origin = repo.remotes.origin
+        origin.pull()
+        return 'Updated PythonAnywhere successfully', 200
+    else:
+        return 'Wrong event type', 400
     
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
